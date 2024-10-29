@@ -6,7 +6,7 @@ import PyPDF2 as pdf
 from dotenv import load_dotenv
 import json
 
-load_dotenv() ## load all our environment variables
+load_dotenv() 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
@@ -23,7 +23,6 @@ def input_pdf_text(uploaded_file):
         text+=str(page.extract_text())
     return text
 
-#Prompt Template
 
 input_prompt="""
 Hey Act Like a skilled or very experience ATS(Application Tracking System)
@@ -40,7 +39,6 @@ I want the response as per below structure
 {{"JD Match": "%", "MissingKeywords": [], "Profile Summary": ""}}
 """
 
-## streamlit app
 
 with st.sidebar:
     st.title("Smart ATS for Resumes")
@@ -56,7 +54,6 @@ with st.sidebar:
     """)
     
     add_vertical_space(5)
-    st.write("Made with ❤ by Prajwal Krishna.")
     
     
 
